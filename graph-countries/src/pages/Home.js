@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { SearchIcon} from '@heroicons/react/outline'
 import CardCountries from '../components/CardCountries'
-import {getAllCountries} from '../api/Api'
+import {getAllCountries,getLocalCountries} from '../api/Api'
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as countryActions from '../actions/country'
 
 class Home extends Component {
+    state = {
+        currentCountry : [],
+        nameSearch: null
+    }
     async componentDidMount(){
         const res =  await getAllCountries();
         //console.log('res data: ', res.data.Country);
@@ -19,6 +23,14 @@ class Home extends Component {
         
     }
 
+    searchCountry =  (name) =>{
+        const {countries} = this.props.country
+        let countriesSearch =  countries.filter(c => c.name === name.target.value);
+
+        this.setState({currentCountry:countriesSearch});
+
+    }
+
     render() {
         const {countries} = this.props.country;
         console.log('restorno dos dados = ',countries);
@@ -26,7 +38,7 @@ class Home extends Component {
                 <main className="grid place-items-center min-h-screen  md:px-32 sm:px-8 py-8">
                     <header>
                         <div className="relative text-gray-600">
-                        <input type="search" name="serch" placeholder="Buscar país" className="bg-white h-10 w-96 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+                        <input type="search" name="serch" value={this.state.nameSearch} onChange={this.searchCountry} placeholder="Buscar país" className="bg-white h-10 w-96 px-5 pr-10 rounded-full text-sm focus:outline-none" />
                         <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
                             <SearchIcon className="h-5 w-5 text-blue-500"/>
                         </button>
