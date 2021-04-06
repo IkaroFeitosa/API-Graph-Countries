@@ -4,3 +4,9 @@ export function initData(data){
         data
     }
 }
+export function selectCountry(data){
+    return {
+        type:'SELECT_COUNTRY',
+        data
+    }
+}

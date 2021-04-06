@@ -15,9 +15,19 @@ export async function getAllCountries (){
             query {
                 Country {
                     name
+                    nativeName
                     capital
+                    area
+                    population
                     flag {
                       svgFile
+                    }
+                    topLevelDomains {
+                      name
+                    }
+                    location {
+                      latitude
+                      longitude
                     }
                 }
             }

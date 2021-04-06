@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { SearchIcon} from '@heroicons/react/outline'
 import CardCountries from '../components/CardCountries'
-import {getAllCountries,getLocalCountries} from '../api/Api'
+import {getAllCountries} from '../api/Api'
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -41,7 +41,6 @@ class Home extends Component {
         if((nameSearch !== null) && (nameSearch !== '') && currentCountry.length){
             listCountries = currentCountry;
         }
-        console.log('restorno dos dados = ',listCountries);
         return (
                 <main className="grid place-items-center min-h-screen  md:px-32 sm:px-8 py-8">
                     <header>
