@@ -61,7 +61,7 @@ class Countries extends Component {
                                             <h1 className="font-bold uppercase text-2xl mb-5" >{countrySelected.name} <br /> ({countrySelected.nativeName})</h1>
                                             <div className="text-md">
                                                 <ul>
-                                                    <li className="text-gray">Capital: <span className="text-yellow-600">{countrySelected.capital}</span></li>
+                                                    <li className="text-gray">Capital: <span className="text-yellow-600" contentEditable>{countrySelected.capital}</span></li>
                                                     <li className="text-gray">Top-level domain: 
                                                         <ul>
                                                             {countrySelected.topLevelDomains.map(element => (
