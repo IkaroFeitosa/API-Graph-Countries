@@ -8,7 +8,6 @@ class CardCountries extends Component {
     
     render() {
         const {data} = this.props;
-        console.log('dados: ',data);
         return (
             <div className="bg-gray-900 shadow-lg rounded p-3">
                 <div className="group relative">

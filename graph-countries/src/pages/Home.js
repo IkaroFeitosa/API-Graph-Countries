@@ -25,20 +25,28 @@ class Home extends Component {
 
     searchCountry =  (name) =>{
         const {countries} = this.props.country
-        let countriesSearch =  countries.filter(c => c.name === name.target.value);
+        const value = name.target.value;
+        let countriesSearch =  countries.filter(c => c.name.toUpperCase().includes(value.toUpperCase()));
 
-        this.setState({currentCountry:countriesSearch});
+        this.setState({currentCountry:countriesSearch,nameSearch:value});
 
     }
 
     render() {
         const {countries} = this.props.country;
-        console.log('restorno dos dados = ',countries);
+        let listCountries = countries;
+
+        const {currentCountry,nameSearch} = this.state;
+
+        if((nameSearch !== null) && (nameSearch !== '') && currentCountry.length){
+            listCountries = currentCountry;
+        }
+        console.log('restorno dos dados = ',listCountries);
         return (
                 <main className="grid place-items-center min-h-screen  md:px-32 sm:px-8 py-8">
                     <header>
                         <div className="relative text-gray-600">
-                        <input type="search" name="serch" value={this.state.nameSearch} onChange={this.searchCountry} placeholder="Buscar país" className="bg-white h-10 w-96 px-5 pr-10 rounded-full text-sm focus:outline-none" />
+                        <input type="search" name="serch" value={nameSearch?nameSearch:''} onChange={this.searchCountry} placeholder="Buscar país" className="bg-white h-10 w-96 px-5 pr-10 rounded-full text-sm focus:outline-none" />
                         <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
                             <SearchIcon className="h-5 w-5 text-blue-500"/>
                         </button>
@@ -48,7 +56,7 @@ class Home extends Component {
                        <h1 className="text-5xl sm:text-3xl md:text-5xl font-bold text-gray-200 mb-10">Países</h1>
                        <section className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 gap-12">
                        {
-                           countries.length?countries.map(element => (<CardCountries key={element.name} data={element}/>)):'Nenhum país encontrado :('
+                           listCountries.length?listCountries.map(element => (<CardCountries key={element.name} data={element}/>)):'Nenhum país encontrado :('
                        }
                        </section>
                     </div>
