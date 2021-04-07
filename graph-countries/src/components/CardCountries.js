@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ViewListIcon} from '@heroicons/react/outline'
+import { ViewListIcon, PencilIcon} from '@heroicons/react/outline'
+import ModalEdit from './ModalEdit'
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -8,10 +9,14 @@ import * as countryActions from '../actions/country'
 
 class CardCountries extends Component {
     state = {
-        pg: 'Home'
+        pg: 'Home',
+        modalVisible: false
     }
     goCountry = () => {
         this.props.selectCountry({country:this.props.data,pg:'Country'})
+    }
+    goModal = () => {
+        this.props.selectCountry({modalVisible:!this.state.modalVisible})
     }
     render() {
         const {data} = this.props;
@@ -26,6 +31,10 @@ class CardCountries extends Component {
                     
                     <button onClick={this.goCountry} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                         <ViewListIcon className="h-10 w-10" />
+                    </button>
+
+                    <button onClick={this.goModal} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                        <PencilIcon className="h-10 w-10" />
                     </button>
                  
                 </div>
