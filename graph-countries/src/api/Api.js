@@ -4,9 +4,9 @@ const urlApiCoutries = "https://countries-274616.ew.r.appspot.com/";
 
 export async function getAllCountries (){
     let data;
-    if(getCountCountries() > 0){
+    if(await getCountCountries() > 0)
       return getLocalCountries();
-    }
+    
     await axios({
         url: urlApiCoutries,
         method: 'post',
@@ -45,9 +45,12 @@ export async function getAllCountries (){
       
 }
 export async function getLocalCountries (){
-    return JSON.parse(localStorage.getItem('AllCountries'));
+    return {data:{Country:JSON.parse(localStorage.getItem('AllCountries'))}};
 }
 export async function getCountCountries (){
     return JSON.parse(localStorage.getItem('NumCountries'));
+}
+export async function setLocalCountries (data){
+  await localStorage.setItem('AllCountries', JSON.stringify(data) )
 }
 

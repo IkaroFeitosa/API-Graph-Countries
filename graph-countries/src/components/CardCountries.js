@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ViewListIcon, PencilIcon} from '@heroicons/react/outline'
-import ModalEdit from './ModalEdit'
 
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -9,18 +8,16 @@ import * as countryActions from '../actions/country'
 
 class CardCountries extends Component {
     state = {
-        pg: 'Home',
-        modalVisible: false
+        pg: 'Home'
     }
     goCountry = () => {
         this.props.selectCountry({country:this.props.data,pg:'Country'})
     }
     goModal = () => {
-        this.props.selectCountry({modalVisible:!this.state.modalVisible})
+        this.props.editCountry({country:this.props.data,modal:true,index:this.props.index})
     }
     render() {
         const {data} = this.props;
-        console.log('props : ',this.props);
         if(this.props.country.pg !== this.state.pg)
             return (<Redirect to='/Countries' />);
         return (
