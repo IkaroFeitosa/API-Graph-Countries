@@ -9,7 +9,6 @@ import { setLocalCountries } from '../api/Api'
 class ModalEdit extends Component {
 
     saveDataModal = async () => {
-        console.log('Country editando: ',this.props.country.editCountry)
 
         let {countries, index} = this.props.country;
         countries[index] = this.props.country.editCountry;
@@ -28,7 +27,6 @@ class ModalEdit extends Component {
     }
 
     render() {
-        console.log('indx: ', this.props.country.index);
         const {editCountry} = this.props.country;
         return (
             <div>
@@ -54,7 +52,7 @@ class ModalEdit extends Component {
                                 </h2>
                                 <div className="max-w-sm mx-auto md:w-2/3">
                                     <div className=" relative ">
-                                        <input type="text" id="country-info-name" onChange={this.props.editCountryName} value={editCountry.name} className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email" />
+                                        <input type="text" id="country-info-name" onChange={this.props.editCountryName} value={editCountry.name} className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
                                     </div>
                                 </div>
                             </div>
@@ -66,12 +64,12 @@ class ModalEdit extends Component {
                                 <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-lat" onChange={this.props.editCountryLatitude} value={editCountry.location.latitude} placeholder="Latitude" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+                                            <input type="text" id="country-info-lat" onChange={this.props.editCountryLatitude} value={editCountry.location.latitude} placeholder="Latitude" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
                                         </div>
                                     </div>
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-long" onChange={this.props.editCountryLongitude}  value={editCountry.location.longitude} placeholder="Longitude" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Phone number" />
+                                            <input type="text" id="country-info-long" onChange={this.props.editCountryLongitude}  value={editCountry.location.longitude} placeholder="Longitude" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"  />
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +82,7 @@ class ModalEdit extends Component {
                                 <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-capital" onChange={this.props.editCountryCapital} value={editCountry.capital} placeholder="Capital" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+                                            <input type="text" id="country-info-capital" onChange={this.props.editCountryCapital} value={editCountry.capital} placeholder="Capital" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"  />
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +97,7 @@ class ModalEdit extends Component {
                                 <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-area" onChange={this.props.editCountryArea} value={editCountry.area} placeholder="Área" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+                                            <input type="text" id="country-info-area" onChange={this.props.editCountryArea} value={editCountry.area} placeholder="Área" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +110,7 @@ class ModalEdit extends Component {
                                 <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-population" onChange={this.props.editCountryPopulacao} value={editCountry.population} placeholder="População" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+                                            <input type="text" id="country-info-population" onChange={this.props.editCountryPopulacao} value={editCountry.population} placeholder="População" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"/>
                                         </div>
                                     </div>
                                 </div>
@@ -125,7 +123,7 @@ class ModalEdit extends Component {
                                 <div className="max-w-sm mx-auto space-y-5 md:w-2/3">
                                     <div>
                                         <div className=" relative ">
-                                            <input type="text" id="country-info-domain" onChange={this.props.editCountryDomain} value={editCountry.topLevelDomains[0].name} placeholder="Área" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Name" />
+                                            <input type="text" id="country-info-domain" onChange={this.props.editCountryDomain} value={editCountry.topLevelDomains[0].name} placeholder="Área" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" />
                                         </div>
                                     </div>
                                 </div>

@@ -15,9 +15,7 @@ class Home extends Component {
     }
     async componentDidMount() {
         const res = await getAllCountries();
-        console.log('ressssss: ',res)
         if (res.data.Country) {
-            console.log('res data: ', res.data.Country);
             this.props.initData(res.data.Country);
         }
 
@@ -33,7 +31,7 @@ class Home extends Component {
     }
 
     render() {
-        const { countries, modal, editCountry } = this.props.country;
+        const { countries, modal } = this.props.country;
         let listCountries = countries;
 
         const { currentCountry, nameSearch } = this.state;
