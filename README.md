@@ -3,3 +3,5 @@
 <p>
     O projeto está dentro da pasta <code>graph-countries</code>.
 </p>
+<h2>Como visualizar</h2>
+<h3>O projeto está publicado em : https://ikarofeitosa.github.io/countries.github.io/</h3>
