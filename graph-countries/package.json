@@ -2,6 +2,7 @@
   "name": "graph-countries",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ikarofeitosa.github.io/countries.github.io",
   "dependencies": {
     "@craco/craco": "^6.1.1",
     "@heroicons/react": "^1.0.0",
